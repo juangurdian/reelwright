@@ -1,6 +1,6 @@
 # Architecture
 
-ReelForge is a **pipeline**, not an app. The AI agent is the orchestrator; each layer is
+Reelwright is a **pipeline**, not an app. The AI agent is the orchestrator; each layer is
 an independent, headless tool the agent drives.
 
 ## Layers

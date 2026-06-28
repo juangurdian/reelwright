@@ -1,6 +1,6 @@
 ---
 name: video-studio
-description: Use when the user wants to create or edit a video — a promo, app demo, social clip, intro, or motion-graphics piece — in a ReelForge project. Drives the capture → generate → compose → edit → render pipeline so the agent produces a finished video from a description and assets.
+description: Use when the user wants to create or edit a video — a promo, app demo, social clip, intro, or motion-graphics piece — in a Reelwright project. Drives the capture → generate → compose → edit → render pipeline so the agent produces a finished video from a description and assets.
 ---
 
 # Video Studio

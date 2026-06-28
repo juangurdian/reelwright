@@ -1,4 +1,4 @@
-# ReelForge — agent operating guide
+# Reelwright — agent operating guide
 
 You are producing video for a user with no video-editing experience. You author
 and render everything in code. Read this before starting.

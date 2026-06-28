@@ -1,16 +1,16 @@
-# ReelForge 🎬
+# Reelwright 🎬
 
 **An agent-driven video studio.** Point an AI coding agent (like [Claude Code](https://claude.com/claude-code)) at this repo and ask it to *"make a promo for my app"* — it captures real screens, generates AI footage, composes motion graphics in code, edits with FFmpeg, and renders a finished video. No timeline, no GUI, no video-editing experience required.
 
 > Built by an agent, for agents. The human describes the video; the agent produces it.
 
-https://github.com/your-org/reelforge
+https://github.com/juangurdian/reelwright
 
 ---
 
 ## Why
 
-Video editors are GUIs built for humans. AI agents can't click timelines — but they *can* write code, call APIs, and run CLIs. ReelForge is the missing layer: a set of **reusable scene components**, a **generation CLI**, and an **operating guide** that together let an agent produce real videos headlessly.
+Video editors are GUIs built for humans. AI agents can't click timelines — but they *can* write code, call APIs, and run CLIs. Reelwright is the missing layer: a set of **reusable scene components**, a **generation CLI**, and an **operating guide** that together let an agent produce real videos headlessly.
 
 It's not one tool — it's a **pipeline** the agent conducts:
 
@@ -40,7 +40,7 @@ It's not one tool — it's a **pipeline** the agent conducts:
 ## Quickstart (humans)
 
 ```bash
-git clone https://github.com/your-org/reelforge && cd reelforge
+git clone https://github.com/juangurdian/reelwright && cd reelwright
 npm install
 npm run demo          # renders examples → output/demo.mp4 (no API key needed)
 npm run dev           # opens Remotion Studio to preview/edit live

@@ -1,5 +1,5 @@
 {
-  "name": "reelforge",
+  "name": "reelwright",
   "version": "0.1.0",
   "description": "An agent-driven video studio: capture, generate, compose, and edit videos end-to-end with an AI coding agent (Claude Code) as the orchestrator.",
   "license": "MIT",
