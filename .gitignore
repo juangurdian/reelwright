@@ -1,0 +1,12 @@
+node_modules/
+output/
+renders/
+*.log
+.DS_Store
+.env
+.env.local
+# user media — keep the folders, ignore large binaries
+assets/video/*
+assets/audio/*
+assets/images/*
+!assets/**/.gitkeep
