@@ -1,0 +1,65 @@
+[
+  {
+    "text": " Train",
+    "startMs": 30,
+    "endMs": 430,
+    "timestampMs": 230,
+    "confidence": null
+  },
+  {
+    "text": " smarter.",
+    "startMs": 430,
+    "endMs": 970,
+    "timestampMs": 700,
+    "confidence": null
+  },
+  {
+    "text": " Your",
+    "startMs": 970,
+    "endMs": 1350,
+    "timestampMs": 1160,
+    "confidence": null
+  },
+  {
+    "text": " AI",
+    "startMs": 1350,
+    "endMs": 1650,
+    "timestampMs": 1500,
+    "confidence": null
+  },
+  {
+    "text": " coach",
+    "startMs": 1650,
+    "endMs": 1930,
+    "timestampMs": 1790,
+    "confidence": null
+  },
+  {
+    "text": " adapts",
+    "startMs": 1930,
+    "endMs": 2470,
+    "timestampMs": 2200,
+    "confidence": null
+  },
+  {
+    "text": " every",
+    "startMs": 2470,
+    "endMs": 2730,
+    "timestampMs": 2600,
+    "confidence": null
+  },
+  {
+    "text": " single",
+    "startMs": 2730,
+    "endMs": 3030,
+    "timestampMs": 2880,
+    "confidence": null
+  },
+  {
+    "text": " day.",
+    "startMs": 3030,
+    "endMs": 3470,
+    "timestampMs": 3250,
+    "confidence": null
+  }
+]

@@ -55,7 +55,13 @@ cp .env.example .env  # add your FAL_KEY from https://fal.ai
 npm run gen image "a neon product render on a dark background" --out assets/images/hero.png
 npm run gen animate assets/images/hero.png "slow cinematic rotation" --model wan
 npm run gen music "uplifting electronic intro, no vocals" --seconds 20 --out assets/audio/track.mp3
+# voiceover → word-level captions (TikTok style):
+npm run gen tts "Train smarter. Your AI coach adapts every day." --out assets/audio/vo.mp3
+npm run gen transcribe assets/audio/vo.mp3 --out src/examples/captions.json
+# then render the CaptionedDemo (or drop <CaptionTrack/> on any composition)
 ```
+
+`generate.mjs` modes: `image · video · animate · tts · transcribe · music · upscale · removebg · raw`.
 
 ## Quickstart (agents)
 

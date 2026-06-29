@@ -4,12 +4,13 @@ Reelwright's direction. Informed by a research pass on the faceless/AI-video spa
 the Remotion ecosystem, and OSS dev-tool growth playbooks. Help shape it — open an issue!
 
 ## Now (table stakes)
-- [ ] **AI voiceover (TTS)** with a *TTS-first* timing model — generate the voiceover first,
-      then derive scene durations from the audio. Providers: ElevenLabs / fal (hosted),
-      Piper / Kokoro (free local).
-- [ ] **Word-level auto-captions** — Whisper/WhisperX → animated, highlighted captions.
-- [ ] **Multi-format rendering** — 9:16 / 1:1 / 16:9 from one composition (responsive scenes).
-- [ ] **Demo GIF + topics + Show HN launch.** (in progress)
+- [x] **AI voiceover (TTS)** — `generate.mjs tts` (fal Kokoro). *TTS-first timing next.*
+- [x] **Word-level auto-captions** — `generate.mjs transcribe` (fal Whisper) → `CaptionTrack`
+      component (TikTok-style word highlighting) + `CaptionedDemo`.
+- [~] **Multi-format rendering** — vertical 9:16 shipped (CaptionedDemo @ 1080×1920);
+      responsive landscape↔portrait scene reflow still open (see issue #5).
+- [x] **Demo GIF + topics + ROADMAP + good-first-issues.** Show HN launch still to do.
+- [ ] **TTS-first timing helper** — derive scene/composition duration from voiceover length.
 
 ## Next
 - [ ] **More device frames** — tablet, laptop, browser window, smartwatch (generalize `PhoneFrame`).

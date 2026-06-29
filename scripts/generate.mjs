@@ -62,6 +62,14 @@ async function toDataUri(p) {
   return `data:image/${ext};base64,${buf.toString("base64")}`;
 }
 
+// Upload a local file to fal storage and return its URL (works for any mime —
+// use for audio/video where a data: URI is unreliable).
+async function uploadLocal(p) {
+  if (/^https?:\/\//.test(p)) return p;
+  const buf = await readFile(p);
+  return await fal.storage.upload(new Blob([buf]));
+}
+
 function logResult(label, endpoint, out) {
   console.log(`\n✅ ${label}\n   endpoint: ${endpoint}\n   saved:    ${out}\n`);
 }
@@ -130,6 +138,39 @@ async function main() {
     if (!url) throw new Error("No image returned: " + JSON.stringify(r.data).slice(0, 300));
     await download(url, out);
     logResult("Background removed", endpoint, out);
+  } else if (mode === "tts") {
+    const text = positional[0];
+    const endpoint = flags.model || "fal-ai/kokoro/american-english";
+    const out = flags.out || `assets/audio/vo-${Date.now()}.mp3`;
+    const input = { prompt: text, voice: flags.voice || "af_heart", speed: Number(flags.speed || 1) };
+    console.log(`Generating voiceover via ${endpoint} (~$0.02/1k chars)...`);
+    const r = await fal.subscribe(endpoint, { input, logs: false });
+    const url = r.data.audio?.url || r.data.audio_url || r.data.audio_file?.url;
+    if (!url) throw new Error("No audio returned: " + JSON.stringify(r.data).slice(0, 300));
+    await download(url, out);
+    logResult("Voiceover generated", endpoint, out);
+  } else if (mode === "transcribe") {
+    // audio -> word-level caption JSON (for caption scenes)
+    const audio = positional[0];
+    const endpoint = flags.model || "fal-ai/whisper";
+    const out = flags.out || `assets/audio/captions-${Date.now()}.json`;
+    const audio_url = await uploadLocal(audio);
+    console.log(`Transcribing via ${endpoint} (word-level)...`);
+    const r = await fal.subscribe(endpoint, {
+      input: { audio_url, task: "transcribe", chunk_level: "word", version: "3" },
+      logs: false,
+    });
+    const chunks = r.data.chunks || r.data.words || [];
+    // Emit the @remotion/captions Caption[] format (ms timings, leading space for whitespace).
+    const captions = chunks
+      .filter((c) => Array.isArray(c.timestamp) && c.timestamp[0] != null && c.timestamp[1] != null)
+      .map((c) => {
+        const s = c.timestamp[0] * 1000;
+        const e = c.timestamp[1] * 1000;
+        return { text: " " + (c.text || "").trim(), startMs: s, endMs: e, timestampMs: (s + e) / 2, confidence: null };
+      });
+    await writeFile(out, JSON.stringify(captions, null, 2));
+    console.log(`\n✅ Transcribed ${captions.length} words → Caption[]\n   endpoint: ${endpoint}\n   saved:    ${out}\n`);
   } else if (mode === "music" || mode === "audio") {
     const prompt = positional[0];
     const endpoint = flags.model || "fal-ai/stable-audio-25/text-to-audio";

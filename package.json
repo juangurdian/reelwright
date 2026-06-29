@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "@fal-ai/client": "^1.6.2",
+    "@remotion/captions": "^4.0.483",
     "@remotion/cli": "4.0.483",
     "@remotion/google-fonts": "4.0.483",
     "@remotion/shapes": "4.0.483",
