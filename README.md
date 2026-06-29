@@ -4,6 +4,8 @@
 
 > Built by an agent, for agents. The human describes the video; the agent produces it.
 
+![Reelwright demo — rendered entirely from code](docs/media/demo.gif)
+
 https://github.com/juangurdian/reelwright
 
 ---
