@@ -78,6 +78,12 @@ const theme = makeTheme({ accent: "#ff5a36", bg: "#10100f" });
 // every scene now uses the new palette — no component edits
 ```
 
+## Docs
+- [`docs/SYSTEM.md`](docs/SYSTEM.md) — full system reference (every component, the CLI, **cloud vs. local generation**)
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — layer-by-layer design
+- [`docs/WORKFLOW.md`](docs/WORKFLOW.md) — a worked end-to-end promo
+- [`ROADMAP.md`](ROADMAP.md) — direction & status
+
 ## Requirements
 
 - Node 18+, [FFmpeg](https://ffmpeg.org) on PATH
